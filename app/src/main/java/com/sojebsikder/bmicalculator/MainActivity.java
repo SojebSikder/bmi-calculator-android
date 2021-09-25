@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextAge;
     private EditText editTextHeight;
     private EditText editTextWeight;
+    private EditText editTextResult;
 
     private RadioButton radioBtnMale;
     private RadioButton radioBtnFemale;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         editTextAge = findViewById(R.id.editTextAge);
         editTextHeight = findViewById(R.id.editTextHeight);
         editTextWeight = findViewById(R.id.editTextWeight);
+        editTextResult = findViewById(R.id.editTextResult);
+
 
         radioBtnMale = findViewById(R.id.radioBtnMale);
         radioBtnFemale = findViewById(R.id.radioBtnFemale);
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 df.setRoundingMode(RoundingMode.CEILING);
                 String result =  df.format(weight / (height * height));
 
+                editTextResult.setText(result);
                 Toast.makeText(getApplicationContext(),result.toString(),Toast.LENGTH_SHORT).show();
             }
         });
